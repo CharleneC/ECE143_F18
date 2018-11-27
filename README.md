@@ -10,12 +10,10 @@ Repository for ECE143 Project
 ####### hourly
 - [ ] hourly variations
 - [ ] most busy days
-- [ ] 
 
 ####### monthly averages
 - [ ] variation of rideship over years
 - [ ] variation with months
-- [ ] 
 
 #### Plots to add 
 - [ ] hourly ridership entry/exit (line chart/ kde)
@@ -25,7 +23,6 @@ Repository for ECE143 Project
 - [ ] folio map for hourly for one day
 - [ ] folio map for entry/exit for over time
 - [ ] top ten most ridden days and least ridden days - compare to actual events
-- [ ] 
 
 #### questions answered
 - [ ] overall growth (+prdictions)

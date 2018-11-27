@@ -7,11 +7,11 @@ Repository for ECE143 Project
 - [ ] make functions modular so that reads the correct file and extracts the correct info for the each hourly data files
 
 #### things to extract from each data source
-####### hourly
+**hourly**
 - [ ] hourly variations
 - [ ] most busy days
 
-####### monthly averages
+**monthly averages**
 - [ ] variation of rideship over years
 - [ ] variation with months
 

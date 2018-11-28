@@ -16,13 +16,13 @@ Repository for ECE143 Project
 - [ ] variation with months
 
 #### Plots to add 
-- [ ] hourly ridership entry/exit (line chart/ kde)
-- [ ] perstation 2 most popular and 2 least popular 
-- [ ] week end vs weekday over the years
-- [ ] pie charts for station trafic for  selected years
-- [ ] folio map for hourly for one day
-- [ ] folio map for entry/exit for over time
-- [ ] top ten most ridden days and least ridden days - compare to actual events
+- [ ] hourly ridership entry/exit (line chart/ kde) - Charlene
+- [ ] 2 most popular and 2 least popular - Arun
+- [ ] week end vs weekday over the years - Tim 
+- [ ] pie charts for station trafic for  selected years - Jiaqi
+- [ ] folio map for hourly for one day  - Charlene
+- [ ] folio map for entry/exit for over year - Tim
+- [ ] top ten most ridden days and least ridden days - compare to actual events -Arun 
 
 #### questions answered
 - [ ] overall growth (+prdictions)

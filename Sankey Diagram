@@ -1,0 +1,39 @@
+import pandas as pd
+import collections
+from ipysankeywidget import SankeyWidget
+
+
+
+starting = ['EMBR','CIVC','MONT','POWL','12TH']
+ending = ['DUBL','BALB','24TH','PHIL','DELN','WCRK','FRMT']
+
+filename = r'D:\1st Quarter\ECE143\Data\HourlyRidership\date-hour-soo-dest-2018.csv'
+fo = pd.read_csv(filename, index_col=0, header=None, names=['Date','Hour','Departing','Arriving','Count'])
+foo = fo.loc['2018-08-22']
+
+Result = collections.OrderedDict()
+for i in starting:
+    Result[i] = foo[foo.Departing == i]
+
+
+Result_1 = collections.OrderedDict()
+dict_1 = {}
+for i in starting:
+    for end in ending:
+        Result_1[i+end] = Result[i][Result[i].Arriving == end]
+        add_up = 0
+        for num in list(Result_1[i+end].Count):
+            add_up += num
+            dict_1[i+end] = add_up
+
+L3 = []      
+for key in Result_1.keys():
+    dict_2 = {}
+    dict_2['source'] = Result_1[key]['Departing'].iloc[0]    
+    dict_2['target'] = Result_1[key]['Arriving'].iloc[0]
+    dict_2['value'] = Result_1[key]['Count'].sum()
+    L3.append(dict_2)    
+
+s = SankeyWidget(links = L3,
+             width=800, height=800,margins=dict(top=0, bottom=0,left=150,right=120))
+s.auto_save_png('1.png')

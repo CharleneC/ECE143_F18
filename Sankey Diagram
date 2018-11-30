@@ -32,8 +32,14 @@ for key in Result_1.keys():
     dict_2['source'] = Result_1[key]['Departing'].iloc[0]    
     dict_2['target'] = Result_1[key]['Arriving'].iloc[0]
     dict_2['value'] = Result_1[key]['Count'].sum()
-    L3.append(dict_2)    
-
+    L3.append(dict_2) 
+    
+color = ['x', 'y', 'z', 'goldenrod', '#aaa']
+for d in L3:
+    for i in range(5):
+        if d['source'] == starting[i]:
+            d['type'] = color[i]
+            
 s = SankeyWidget(links = L3,
              width=800, height=800,margins=dict(top=0, bottom=0,left=150,right=120))
 s.auto_save_png('1.png')

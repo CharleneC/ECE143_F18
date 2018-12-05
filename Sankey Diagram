@@ -2,44 +2,50 @@ import pandas as pd
 import collections
 from ipysankeywidget import SankeyWidget
 
+'''
+From previous analysis, we have already get the top five starting stations and top seven ending stations in 22/08/2018.
 
+Now we want to use Sankey Diagram to visualize traffic flow among these starting and ending stations in this day.
+'''
 
 starting = ['EMBR','CIVC','MONT','POWL','12TH']
 ending = ['DUBL','BALB','24TH','PHIL','DELN','WCRK','FRMT']
 
 filename = r'D:\1st Quarter\ECE143\Data\HourlyRidership\date-hour-soo-dest-2018.csv'
 fo = pd.read_csv(filename, index_col=0, header=None, names=['Date','Hour','Departing','Arriving','Count'])
-foo = fo.loc['2018-08-22']
+fo_find_date = fo.loc['2018-08-22']
 
-Result = collections.OrderedDict()
+select_date = collections.OrderedDict()
 for i in starting:
-    Result[i] = foo[foo.Departing == i]
+    select_date[i] = fo_find_date[fo_find_date.Departing == i]
 
 
-Result_1 = collections.OrderedDict()
-dict_1 = {}
-for i in starting:
+specific_start_end = collections.OrderedDict()
+startend_number = {}
+for start in starting:
     for end in ending:
-        Result_1[i+end] = Result[i][Result[i].Arriving == end]
+        specific_start_end[start+end] = select_date[start][select_date[start].Arriving == end]
         add_up = 0
-        for num in list(Result_1[i+end].Count):
+        for num in list(specific_start_end[start+end].Count):
             add_up += num
-            dict_1[i+end] = add_up
+            startend_number[start+end] = add_up
 
-L3 = []      
-for key in Result_1.keys():
-    dict_2 = {}
-    dict_2['source'] = Result_1[key]['Departing'].iloc[0]    
-    dict_2['target'] = Result_1[key]['Arriving'].iloc[0]
-    dict_2['value'] = Result_1[key]['Count'].sum()
-    L3.append(dict_2) 
-    
+traffic_flow = []      
+for key in specific_start_end.keys():
+    sankey_dict = {}
+    sankey_dict['source'] = specific_start_end[key]['Departing'].iloc[0]    
+    sankey_dict['target'] = specific_start_end[key]['Arriving'].iloc[0]
+    sankey_dict['value'] = specific_start_end[key]['Count'].sum()
+    traffic_flow.append(sankey_dict)
+
+
 color = ['grey','darkgrey', 'dimgrey', 'lightgrey','silver']
-for d in L3:
-    for i in range(5):
-        if d['source'] == starting[i]:
-            d['color'] = color[i]
-            
-s = SankeyWidget(links = L3,
-             width=800, height=800,margins=dict(top=0, bottom=0,left=150,right=120))
+for col in color:    
+    for element in traffic_flow:
+        for i in range(5):
+            if element['source'] == starting[i]:
+                element['color'] = color[i]
+    
+
+s = SankeyWidget(links = traffic_flow,margins=dict(top=0, bottom=0,left=50,right=100))     
 s.auto_save_png('1.png')

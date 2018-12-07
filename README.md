@@ -8,26 +8,26 @@ Repository for ECE143 Project
 
 #### things to extract from each data source
 **hourly**
-- [ ] hourly variations
-- [ ] most busy days
+- [X] hourly variations
+- [X] most busy days
 
 **monthly averages**
-- [ ] variation of rideship over years
-- [ ] variation with months
+- [X] variation of rideship over years
+- [X] variation with months
 
-#### Plots to add 
+#### Plots 
 - [X] hourly ridership entry/exit (line chart/ kde) - Charlene
-- [ ] 2 most popular and 2 least popular - Arun
+- [X] 2 most popular and 2 least popular - Arun
 - [X] week end vs weekday over the years - Tim 
 - [X] pie charts for station trafic for  selected years - Jiaqi
 - [X] folio map for hourly for one day  - Charlene
-- [ ] folio map for entry/exit for over year - Tim
+- [X] folio map for entry/exit for over year - Tim
 - [X] top ten most ridden days and least ridden days - compare to actual events -Arun 
 - [X] variation of rideship based on day of the week - Arun
 
 
 #### questions answered
-- [ ] overall growth (+prdictions)
+- [X] overall growth (+prdictions)
 - [X] daily breakdown 
 - [X] rush hour analys
-- [ ] possible stations to add
+- [X] possible stations to add

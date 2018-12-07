@@ -1,6 +1,19 @@
 # ECE143_F18
 Repository for ECE143 Project
 
+#### Requirements to run the current project
+- Data please use this link to download the data and save it in the working directory after extacting it (link :https://drive.google.com/file/d/1HmISwXIPAD7THDOPpydNKxobYYrH_3H8/view?usp=sharing)
+
+- Dependencies
+	- Numpy : 1.14.2
+	- Pandas : 0.22.0
+	- Seaborn: 0.9.0
+	- Bokeh : 0.12.13
+	- Matplotlib : 2.1.2
+	- Folium: 0.6.0
+	- Glob : 0.6
+	- Ipysankeywidget : 0.2.4
+
 #### Data cleaning 
 - [x] renaming all files to have consitant formatting
 - [x] convert 214 files to single tall format

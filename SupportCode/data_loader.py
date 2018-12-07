@@ -55,3 +55,36 @@ def monthly_data_loader(data_loc,*,verbose=True,load_sheet=0):
 		full_data = full_data.append(data_selected)
 	
 	return full_data
+	
+	
+def hourly_data_loader(data_loc,year,*,verbose=True,load_sheet=0):
+	'''
+	Reads all the monthly data files and combines all of them to a single dataFrame
+	
+	Args:
+		data_loc (str) : file path to the data folder
+		year (int) : year value between 2001 and 2018
+		
+	Kwargs:
+		verbose (bool) : Set to True to find progress
+		
+	Retruns:
+		df (DataFrame) : combined dataFrame
+	'''
+	# Import libraries
+	import pandas as pd
+	import numpy as np
+	import glob 
+	
+	# Asserts
+	assert isinstance(data_loc,str),"Please enter a valid path"
+	assert isinstance(year,int) and year>2010 and year<2019,"please enter a valid integer year between 2001 and 2018"
+	
+	
+	# build location from data_loc and year
+	location = data_loc+'/HourlyRidership/date-hour-soo-dest-'+str(year)+'.csv'
+	
+	# Create the data frame
+	data=pd.read_csv(location,names=['Date','Hour','Start','End','Rides'],header=None)
+	
+	return data

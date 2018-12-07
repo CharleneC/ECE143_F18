@@ -9,9 +9,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from pyecharts import Pie
-from PIL import Image
 import glob
-#from pyecharts import WorldCloud
 
 def station_entrance(station,filename,*,day='Weekday'):
     """

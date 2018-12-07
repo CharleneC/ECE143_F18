@@ -4,7 +4,7 @@
 @authors: Jiaqi Yan, Arun Joseph
 """
 
-# how to use create_pi_station_distribution(year=2017,day='Weekday') 
+# how to use : create_pi_station_distribution(year=2017,day='Weekday')
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -45,7 +45,7 @@ def station_entrance(station,filename,*,day='Weekday'):
 
 
 
-def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Outputs/',verbose=True,day='Weekday'):
+def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Results/',verbose=True,day='Weekday'):
     '''
     Creates a pie chart for the station traffic for the year specified
 
@@ -54,7 +54,7 @@ def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Outputs/
 
     Kwargs:
         Data_loc (str) : location of BART data [default = 'Data/']
-        Save_loc (str) : folder to which images are to be saved [Default = 'Outputs/']
+        Save_loc (str) : folder to which images are to be saved [Default = 'Results/']
         verbose (bool) : set to True for viewing the progress
         day (str) : feeds into station_entrance check function to see description
     '''
@@ -66,7 +66,7 @@ def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Outputs/
     fo = pd.read_excel('Data/Station_Names.xls')
     station_name_list = fo.iloc[: , 0:2].values
     station_name_lookup=dict(zip(station_name_list[:,1],station_name_list[:,0]))
-    
+
     file_list = glob.glob(Data_path+'ridership_'+str(year)+'/*.xls*')
     assert len(file_list)>0, f"No xls or xlsx files found in the location {Data_loc}/ridership_{str(year)}"
 
@@ -94,8 +94,8 @@ def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Outputs/
     station_name_lookup['others'] = 'Bottom 12 Stations'
     attr,v = zip(*top_dict.items())
     attr_full = list(map(lambda x:station_name_lookup[x],attr))
-    
-    
+
+
     pie =Pie(f'{day} station traffic for {year}')
     pie.add('', attr_full, v, radius=[40,60], is_label_show=True,is_legend_show=False)
 
@@ -105,5 +105,3 @@ def create_pi_station_distribution(year,*,Data_path = 'Data/',Save_loc='Outputs/
         import os
         os.makedirs(Save_loc, exist_ok=True)
         pie.render(path=Save_loc+'station_traffic_'+day+'_'+str(year)+'.png')
-
-

@@ -1,0 +1,8 @@
+Numpy : 1.14.2
+Pandas : 0.22.0
+Seaborn: 0.9.0
+Bokeh : 0.12.13
+Matplotlib : 2.1.2
+Folium: 0.6.0
+Glob : 0.6
+Ipysankeywidget : 0.2.4

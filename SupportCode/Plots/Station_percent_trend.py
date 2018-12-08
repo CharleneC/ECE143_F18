@@ -37,7 +37,7 @@ def plot_station_percent_share(df,*,size='large'):
         g.set_ylabel('Percentage Share')
 
     if size =='small':
-        small_station_data = data_station_traffic[data_station_traffic.Start.str.contains('DC|NB|SB|SC')]
+        small_station_data = data_station_traffic[data_station_traffic.Start.str.contains('DC|NB|SB|NC')]
         g=sns.lineplot(data=small_station_data,x='year',y='Percent_share',hue='Start')
         g.xaxis.set_major_locator(plt.MultipleLocator(1))
         g.figure.set_size_inches(10,8)

@@ -1,6 +1,11 @@
 # ECE143_F18
 Repository for ECE143 Project
 
+##  Note to evaluators 
+Due to the nature of some of the libraries used and the interactive nature of some of the outputs a lot of them cannot be seen natively in ipynb file please check the assosiated Results and also the ppt for complete outputs.
+
+
+
 #### Requirements to run the current project
 - Data please use this link to download the data and save it in the working directory after extacting it (link :https://drive.google.com/file/d/1HmISwXIPAD7THDOPpydNKxobYYrH_3H8/view?usp=sharing)
 
@@ -13,6 +18,7 @@ Repository for ECE143 Project
 	- Folium: 0.6.0
 	- Glob : 0.6
 	- Ipysankeywidget : 0.2.4
+	- PyeCharts : 0.5.11
 	
 to install Dependencies please run
 ```bash

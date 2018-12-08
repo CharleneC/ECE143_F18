@@ -13,6 +13,11 @@ Repository for ECE143 Project
 	- Folium: 0.6.0
 	- Glob : 0.6
 	- Ipysankeywidget : 0.2.4
+	
+to install Dependencies please run
+```bash
+pip install -r requirements.txt
+```
 
 #### Data cleaning 
 - [x] renaming all files to have consitant formatting

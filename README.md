@@ -2,7 +2,7 @@
 Repository for ECE143 Project
 
 ##  Note to evaluators 
-Due to the nature of some of the libraries used and the interactive nature of some of the outputs a lot of them cannot be seen natively in ipynb file please check the assosiated Results and also the ppt for complete outputs.
+Due to the nature of some of the **libraries** used and the **interactive nature of some of the outputs** a lot of them cannot be seen natively in ipynb file please check the assosiated **Results** folder and also the **ppt** for complete outputs.
 
 
 
